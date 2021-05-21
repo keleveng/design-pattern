@@ -1,0 +1,9 @@
+InputStreamReader inputStreamReader=new InputStreamReader(in);
+InputStreamReader就是一个适配器，将InputStream适配为Reader
+因为Reader是没有能力直接去读文件的，InputStream虽然可以读文件，但它读到的是字节，不是字符串。
+可以认为in是inputStreamReader的代理对象，但和适配器模式不同，代理模式可以直接调用，
+但因为不想改动源码所以使用代理的方式，适配器模式是不能直接调用的，必须适配
+
+在本例中使用的是对象适配器模式，即让适配器关联源角色
+适配器中有一个有参构造，参数为源角色对象实例，
+适配器中有源角色对象实例引用，通过对象的引用进行适配转换
